@@ -54,8 +54,18 @@ functions:
                chocotype: false # make the parameter optional
             headers:
               X-Client-Id: false
-              
-# vpc:
+                     
+
+# you can add CloudFormation resource templates here
+resources:
+ Resources:
+   S3BucketChocoApi:
+     Type: AWS::S3::Bucket
+     Properties:
+       BucketName: ${opt:stage}-choco-api
+ 
+ 
+ # vpc:
   #   securityGroupIds:
   #     - Ref: ChocoSecurityGroup
   #   subnetIds:
@@ -72,15 +82,5 @@ functions:
   #         CidrIp: 0.0.0.0/0
   #         FromPort: 0
   #         ToPort: 80
-#      - cloudwatchLog: '/aws/lambda/hello'
- 
-# you can add CloudFormation resource templates here
-resources:
- Resources:
-   S3BucketChocoApi:
-     Type: AWS::S3::Bucket
-     Properties:
-       BucketName: ${opt:stage}-choco-api
- 
-
+  # - cloudwatchLog: '/aws/lambda/hello'
  

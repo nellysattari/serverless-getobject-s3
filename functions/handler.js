@@ -30,8 +30,8 @@ module.exports.chocolates = (event, context, callback) => {
   .then(result => handleSuccess(result, callback))
   .catch(err => handleError(err, callback));
 };
-
  
+
 
 // const preprocess = (event, callback, next) => {
 // 	var requestJSON;
